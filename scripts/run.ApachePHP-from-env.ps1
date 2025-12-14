@@ -37,6 +37,7 @@ $dockerCmd = @(
     "docker run -d",
     "--name $containerName",
     "-p $portMapping",
+    "-v .\src:/var/www/localhost/htdocs",
     "-v ${volumePath}:/var/www/${servername}",
     "-v .\logs\apachephp:/var/log/apache2",
     "--env-file $envFile",
